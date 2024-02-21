@@ -14,5 +14,6 @@ if (!$conn) {
 
 session_start();
 
-$id = $_SESSION['id'];
+// Check if $_SESSION['id'] is set before accessing it
+$id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
 ?>

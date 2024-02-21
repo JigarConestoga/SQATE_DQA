@@ -33,7 +33,8 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chatbot.html">ChatBot</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -74,63 +75,64 @@
         </div>
     </main>
     
-    <section class="topContent">
+    <!-- <section class="topContent">
       <div class="mainHeading">
           <div><span class="main-content" style="color: #4eb14e;">Basic Banking System</span></div>
-          <div style="margin-top: 12px;"><span class="sub-content">A Basic Banking System for making money transactions between users. 
-            <br>No login system. 
-            <br>No user creation. 
-            <br>Direct transfer between existing users.</span></div>
+          <div style="margin-top: 12px;"><span class="sub-content">A Basic Banking System for making money transactions between users.
+            <br>Direct transfer between existing users and new users</span></div>
           <a href="#services" class="btn btn-outline-success mt-3">Get Started</a>
-      </div>
+      </div> -->
 	
     </section>
 
     <section class="container" id="services">
-    	<h2 class="heading">Our Services</h2>
+    <h2 class="heading">Our Services</h2>
 
-    	<div class="container  text-center">
-			<div class="row">
-        		<div class="card col-md-3 mx-auto" style="width: 18rem;">
-        			<img src="images/customer.png" class="card-img-top mt-3 img" alt="Responsive Image">
-          			<div class="card-body">
-            			<h5 class="card-title">View Users</h5>
-            			<p class="card-text">View all Users</p>
-            			<a href="./transfermoney.php" class="btn btn-success">Go</a>
-        			</div>
-        		</div>
+    <div class="container text-center">
+        <div class="row justify-content-center"> <!-- Centering the row -->
+            <div class="col-md-3">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="images/loan_calculator_image.jpg" class="card-img-top mt-3 img" alt="Responsive Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Loan Calculator</h5>
+                        <p class="card-text">Calculate your Loan Amount</p>
+                        <a href="loancalculator.html" class="btn btn-success">GO</a>
+                    </div>
+                </div>
+            </div>
 
-				<div class="card col-md-3 mx-auto" style="width: 18rem;">
-					<img src="images/transfer.png" class="card-img-top mt-3 img" alt="Responsive Image">
-					<div class="card-body">
-						<h5 class="card-title">Loan Calculator</h5>
-						<p class="card-text">Calculate your Loan Amount</p>
-						<a href="loancalculator.html" class="btn btn-success">GO</a>
-					</div>
-				</div>
+            <div class="col-md-3">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="images/transfer.jpg" class="card-img-top mt-3 img" alt="Responsive Image">
+                    <div class="card-body">
+                        <h5 class="card-title" id="harry">Transfer Money</h5>
+                        <p class="card-text">Transfer Money between multiple accounts</p>
+                        <a href="./transfermoney.php" class="btn btn-success">Go</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="card col-md-3 mx-auto" style="width: 18rem;">
-          <img src="images/transfer.png" class="card-img-top mt-3 img" alt="Responsive Image">
-          <div class="card-body">
-            <h5 class="card-title" id="harry">Transfer Money</h5>
-            <p class="card-text"> Transfer Money between multiple accounts</p>
-            <a href="./transfermoney.php" class="btn btn-success">Go</a>
-          </div>
+            <div class="col-md-3">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="images/transactions.jpg" class="card-img-top mt-3 img" alt="Responsive Image">
+                    <div class="card-body">
+                        <h5 class="card-title">View Transactions</h5>
+                        <p class="card-text">View all the past transactions happened between different accounts</p>
+                        <a href="./transactionhistory.php" class="btn btn-success">GO</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
 
-        <div class="card col-md-3 mx-auto" style="width: 18rem;">
-          <img src="images/transactions.png" class="card-img-top mt-3 img" alt="Responsive Image">
-          <div class="card-body">
-            <h5 class="card-title">View Transactions</h5>
-            <p class="card-text">View all the past transactions happened between different accounts</p>
-            <a href="./transactionhistory.php" class="btn btn-success">GO</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-    
+<style>
+    .card-img-top {
+        height: 200px; /* Set a fixed height for all card images */
+        object-fit: cover; /* Ensure the image covers the entire container */
+    }
+</style>
+
 
     <!-- Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
