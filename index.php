@@ -1,38 +1,3 @@
-<?php
-
-// Include database configuration file
-include("config.php");
-
-// Check if the form is submitted
-if (isset($_POST['submit'])) {
-    // Escape user inputs to prevent SQL injection
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-    // Query to check user credentials
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' AND Password='$password'") or die("Select Error");
-
-    // Check if query returned any rows
-    if (mysqli_num_rows($result) > 0) {
-        // Fetch user data
-        $row = mysqli_fetch_assoc($result);
-
-        // Store user data in session variables
-        $_SESSION['valid'] = $row['email'];
-        $_SESSION['username'] = $row['name'];
-        $_SESSION['age'] = $row['Age'];
-        $_SESSION['id'] = $row['id'];
-
-        // Redirect to home.php if login is successful
-        header("Location: home.php");
-        exit;
-    } else {
-        // Display error message if login fails
-        $login_error_message = "<div class='message'><p>Wrong Username or Password</p></div> <br>";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,6 +9,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="css/css.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>Login</title>
+    
     <style>
         /* Style for the container of password input and show/hide password button */
         .password-container {
@@ -59,7 +25,15 @@ if (isset($_POST['submit'])) {
             cursor: pointer;
             z-index: 1; /* Ensure the button stays above the input field */
         }
+
+        /* Apply background image to the whole page */
+        body {
+            background-image: url('https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg');
+            background-size: cover; /* Cover the whole viewport */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+        }
     </style>
+
 </head>
 
 <body>
