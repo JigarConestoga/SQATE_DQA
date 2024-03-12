@@ -1,7 +1,5 @@
 # Basic-Banking-System
 
-Project developed during my GRIP Internship at The Sparks Foundation
-
 A Basic Banking System for making money transactions between users.
 No login system. No user creation. 
 Direct transfer between existing users.
