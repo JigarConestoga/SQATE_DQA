@@ -23,4 +23,6 @@ DATABASE: MySQL
 TO RUN PROJECT save the project in 'htdocs' folder in XAMPP. 
 Open xampp server and start Apache and Mysql servers.
 Open Phpmyadmin and import the sql file in that.
+Go to admin section in the XAMPP
+Create database -> Copy the SQL code and paste it in the SQL section of PHPMyAdmin and click GO
 Open browser and type the URL localhost/projectname/index.php to open the website.
