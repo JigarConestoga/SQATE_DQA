@@ -25,4 +25,4 @@ Username: "root"
 Password: ""
 Go to the admin section in the XAMPP
 Create database -> Copy the SQL code and paste it in the SQL section of PHPMyAdmin and click GO
-Open the browser and type the URL localhost/projectname/index.php to open the website.
+Open the browser and type the URL localhost/sqate_dqa/index.html to open the website.
