@@ -1,104 +1,138 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Import Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>GRIP Bank</title>
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Roboto:wght@300&display=swap');
-    </style>
-  </head>
-  
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo" style="width:40px;"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                  <li class="nav-item"><a class="nav-link" href="chatbot.html">ChatBot</a></li>
-                  <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
-              </ul>
-          </div>
-      </div>
-    </nav>
-    <section class="section">
-        <div class="columns">
-          <div class="column">
-            <div class="card">
-              <div class="card-content">
-                <form id="loan-form">
-                  
-                  <div class="card col-md-6 mx-auto" style="width: 50rem;">
-                    <img src="images/transactions.png" class="card-img-top mt-3 img" alt="Responsive Image">
-                    <div class="card-body" align="center">
-                      <h5 class="card-title">Calculate Loan</h5>
-                      <p class="card-text">
-                        <div>
-                          <div class="level-item">Loan Amount</div>
-                          <input class="input" id="amount" type="number" />
-                          <span class="icon is-small is-left"><i class="fa fa-rupee-sign"></i></span>
-                        </div>
-                        <div>
-                          <div class="level-item">Interest Rate</div>
-                          <input class="input" id="interest" type="number" />
-                          <span class="icon is-small is-left"><i class="fa fa-percentage"></i></span>
-                        </div>
-                        <div>
-                          <div class="level-item">Number of Years</div>
-                          <input class="input" id="years" type="number" />
-                          <span class="icon is-small is-left"><i class="fa fa-calendar"></i></span>
-                        </div>
-                      </p>
-                      <button class="btn btn-success">Calculate</button>
-                    </div>
-                  </div>
-
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-  </section>
-
-    <section class="topContent">
-      <div class="mainHeading">
-          <div><span class="main-content" style="color: #4eb14e;">Calculated Results</span></div>
-          <div style="margin-top: 12px;">
-            <span class="sub-content">
-              <div>
-                <p>Monthly Payments</p>
-                <p id="monthlyPayment"></p>
-              </div>
-              <div>
-                <p>Total Interest</p>
-                <p id="totalInterest"></p>
-              </div>
-              <div>
-                <p>Total Amount</p>
-                <p id="totalPayment"></p>
-              </div>
-            </span>
-          </div>
-      </div>
-    </section>
-
-  </body>
-
-  <script src="app.js"></script>
-
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>GRIP Bank</title>
+		<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+		<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Roboto:wght@300&display=swap');
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo.png" alt="logo" style="width:40px;">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#services">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="chatbot.html">ChatBot</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="logout.php">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="section">
+			<div class="columns">
+				<div class="column">
+					<div class="card">
+						<div class="card-content">
+							<form id="loan-form">
+								<div class="card col-md-6 mx-auto" style="width: 50rem;">
+									<img src="images/transactions.jpg" class="card-img-top mt-3 img" alt="Responsive Image">
+									<div class="card-body" align="center">
+										<h5 class="card-title">Calculate Loan</h5>
+										<p class="card-text">
+										<div>
+											<div class="level-item">Loan Amount</div>
+											<input class="input" id="amount" type="number" />
+											<span class="icon is-small is-left">
+												<i class="fa fa-rupee-sign"></i>
+											</span>
+										</div>
+										<div>
+											<div class="level-item">Interest Rate</div>
+											<input class="input" id="interest" type="number" />
+											<span class="icon is-small is-left">
+												<i class="fa fa-percentage"></i>
+											</span>
+										</div>
+										<div>
+											<div class="level-item">Number of Years</div>
+											<input class="input" id="years" type="number" />
+											<span class="icon is-small is-left">
+												<i class="fa fa-calendar"></i>
+											</span>
+										</div>
+										</p>
+										<button class="btn btn-success">Calculate</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="topContent">
+			<div class="mainHeading">
+				<div>
+					<span class="main-content" style="color: #4eb14e;">Calculated Results</span>
+				</div>
+				<div style="margin-top: 12px;">
+					<span class="sub-content">
+						<div>
+							<p>Monthly Payments</p>
+							<p id="monthlyPayment"></p>
+						</div>
+						<div>
+							<p>Total Interest</p>
+							<p id="totalInterest"></p>
+						</div>
+						<div>
+							<p>Total Amount</p>
+							<p id="totalPayment"></p>
+						</div>
+					</span>
+				</div>
+			</div>
+		</section>
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="social-links">
+					<a class="btn btn-floating btn-lg m-1" target="_blank" href="#">
+						<i class="fab fa-youtube"></i>
+					</a>
+					<a class="btn btn-floating btn-lg m-1" target="_blank" href="#">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a class="btn btn-floating btn-lg m-1" target="_blank" href="#">
+						<i class="fab fa-linkedin"></i>
+					</a>
+					<a class="btn btn-floating btn-lg m-1" target="_blank" href="#">
+						<i class="fab fa-medium"></i>
+					</a>
+				</div>
+				<p class="mt-3 mb-0">&copy; 2023. All rights reserved.</p>
+				<p class="mb-0">
+					<a href="index.html">Contact</a>
+					<span class="px-2">|</span>
+					<a href="index.html">Privacy & Cookie Policy</a>
+					<span class="px-2">|</span>
+					<a href="index.html">Terms of Use</a>
+				</p>
+			</div>
+		</footer>
+		<!-- End Footer -->
+	</body>
+	<script src="app.js"></script>
 </html>
