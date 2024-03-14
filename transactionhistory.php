@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/css.css">
   <title>GRIP Bank</title>
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
@@ -65,35 +66,31 @@
             </tr>
         </thead>
         <tbody>
-        <?php
-
-$hostname = "localhost"; // Your MySQL server hostname
-$username = "root"; // Your MySQL username
-$password = ""; // Your MySQL password
-$database = "grip_bank"; // Your MySQL database name
-$conn = mysqli_connect($hostname, $username, $password, $database);
-if (!$conn) 
-{
-  die("Connection failed: " . mysqli_connect_error());
-}
-$sql = "SELECT * FROM users";
-$result = mysqli_query($conn, $sql);
-$sql ="select * from transaction";
-
-$query =mysqli_query($conn, $sql);
-
-          while($rows = mysqli_fetch_assoc($query))
-          {
-          ?>
-          <tr style="color : black;">
-                      <td class="py-2"><?php echo $rows['sno']; ?></td>
-                      <td class="py-2"><?php echo $rows['sender']; ?></td>
-                      <td class="py-2"><?php echo $rows['receiver']; ?></td>
-                      <td class="py-2"><?php echo $rows['amount']; ?> </td>
-                      <td class="py-2"><?php echo $rows['datetime']; ?> </td>
-                          
-                  <?php
-            }
+  <?php
+    $hostname = "localhost"; // Your MySQL server hostname
+    $username = "root"; // Your MySQL username
+    $password = ""; // Your MySQL password
+    $database = "grip_bank"; // Your MySQL database name
+    $conn = mysqli_connect($hostname, $username, $password, $database);
+    if (!$conn) 
+    {
+      die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "SELECT * FROM users";
+    $result = mysqli_query($conn, $sql);
+    $sql ="select * from transactions";
+    $query =mysqli_query($conn, $sql);
+      while($rows = mysqli_fetch_assoc($query))
+      {
+    ?>
+  <tr style="color : black;">
+  <td class="py-2"><?php echo $rows['sno']; ?></td>
+  <td class="py-2"><?php echo $rows['sender']; ?></td>
+  <td class="py-2"><?php echo $rows['receiver']; ?></td>
+  <td class="py-2"><?php echo $rows['amount']; ?> </td> 
+  <td class="py-2"><?php echo $rows['datetime']; ?> </td>
+  <?php
+    }
 
         ?>
         </tbody>
