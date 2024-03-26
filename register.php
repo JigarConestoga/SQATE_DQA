@@ -80,17 +80,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert data into database
     if (empty($nameErr) && empty($emailErr) && empty($ageErr) && empty($mobileNumberErr) && empty($creditScoreErr) && empty($passwordErr) && empty($retypePasswordErr)) {
-        // Generate a random account number
-        $accountNumber = generateAccountNumber();
-
-        $sql = "INSERT INTO users (name, email, age, mobile, credit_score, password, accountnumber) VALUES ('$name', '$email', $age, '$mobileNumber', $creditScore, '$password', '$accountNumber')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br/>" . $conn->error;
-        }
-    }
+		// Generate a random account number
+		$accountNumber = generateAccountNumber();
+	
+		// Initial balance for new users
+		$initialBalance = 500;
+	
+		$sql = "INSERT INTO users (name, email, age, mobile, credit_score, password, accountnumber, balance) VALUES ('$name', '$email', $age, '$mobileNumber', $creditScore, '$password', '$accountNumber', $initialBalance)";
+	
+		if ($conn->query($sql) === TRUE) {
+			// Display account number to the user
+			echo "New record created successfully. Your account number is: $accountNumber <br>";
+			echo "You have been credited with a minimum balance of $initialBalance <br>";
+	
+			// Redirect user to login page after successful registration
+			header("Refresh: 5; URL=index.html"); // Redirect to index.html after 5 seconds
+			echo "You will be redirected to the login page shortly.";
+		} else {
+			echo "Error: " . $sql . "<br/>" . $conn->error;
+		}
+	}
 }
 
 // Function to sanitize input data

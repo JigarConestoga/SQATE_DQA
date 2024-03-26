@@ -78,6 +78,10 @@ if (!isset($_SESSION['valid'])) {
 				<div class="top">
 					<p>You are <b> <?php echo $res_Age ?> years old </b>. </p>
 				</div>
+				<div class="top">
+				<button class="btn btn-success" id="checkBalanceBtn">Check Balance</button>
+				<p class="card-text" id="balanceResult"></p>
+				</div>
 			</div>
 		</main>
 		<section class="topContent">
@@ -160,6 +164,24 @@ if (!isset($_SESSION['valid'])) {
 		<!-- End Footer -->
 		<!-- Javascript-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$('#checkBalanceBtn').click(function(){
+				$.ajax({
+					url: 'get_balance.php',
+					type: 'GET',
+					success: function(response){
+						$('#balanceResult').text('Your current balance is: ' + response);
+					},
+					error: function(xhr, status, error){
+						console.error(xhr.responseText);
+					}
+				});
+			});
+		});
+		</script>
 		<!-- End Javascript-->
 	</body>
 </html>
