@@ -6,7 +6,7 @@
     font-family: 'Poppins',sans-serif;
 }
 body{
-    background: #e4e9f7;
+    background-image: linear-gradient(to top right, #8B5CF6, #EC4899);;
 }
 .container_new{
     display: flex;
@@ -142,7 +142,7 @@ main{
     font-family: 'Poppins',sans-serif;
 }
 body{
-    background: #e4e9f7;
+    background-image: linear-gradient(to top right, #8B5CF6, #EC4899);;
 }
 .container_new{
     display: flex;
@@ -295,7 +295,7 @@ main{
 
 /* Body styling */
 body{
-    background: #e4e9f7;
+    background-image: linear-gradient(to top right, #8B5CF6, #EC4899);;
 }
 
 /* Container styling */
@@ -377,4 +377,50 @@ body{
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 1; /* Ensure the button stays above the input field */
+}
+
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading */
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.container label {
+    font-weight: bold;
+}
+
+/* Input Fields */
+.container input[type="text"],
+.container input[type="number"],
+.container input[type="email"],
+.container input[type="tel"],
+.container select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+.container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4eb14e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.container input[type="submit"]:hover {
+    background-color: #449e44;
 }
