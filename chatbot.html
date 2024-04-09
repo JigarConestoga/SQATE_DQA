@@ -78,44 +78,85 @@
 											<input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
 											<input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you. (note that this question doesn't expect any answer)" data-no-answer="true">
 											<input type="text" data-conv-question="Welcome to the GRIP BANK." data-no-answer="true">
-											<select name="programmer" data-callback="storeState" data-conv-question="We have three ATMs. Would you like to know where it is?">
+											<select name="programmer" data-callback="storeState" data-conv-question="We have six ATMs. Would you like to know the details about them?">
 												<option value="yes">Yes</option>
-												<option value="no">No</option>
+												<option value="no" data-callback="restore">No</option>
 											</select>
-											<select name="programmer" data-callback="storeState" data-conv-question="Please choose one of the following locations:">
-												<option value="Waterloo">Waterloo</option>
-												<option value="Kitchener">Kitchener</option>
-												<option value="Cambridge">Cambridge</option>
-												<option value="no">No</option>
+											<select name="programmer" data-callback="storeState" data-conv-question="Please choose one of the following locations to view details -">
+												<option value="North York">North York</option>
+												<option value="Brampton">Brampton</option>
+												<option value="Etobicoke">Etobicoke</option>
+												<option value="Mississauga">Mississauga</option>
+												<option value="Scarborough">Scarborough</option>
+												<option value="Toronto Downtown">Toronto</option>
+												<!-- <option value="no">No</option> -->
 											</select>
 											<div data-conv-fork="programmer">
-												<div data-conv-case="Waterloo">
-													<input type="text" data-conv-question="1. 123 Example Street, Waterloo, ON" data-no-answer="true">
-													<input type="text" data-conv-question="2. 456 Sample Avenue, Waterloo, ON" data-no-answer="true">
-													<input type="text" data-conv-question="3. 789 Test Road, Waterloo, ON" data-no-answer="true">
+												<div data-conv-case="North York">
+													<input type="text" data-conv-question="Head Office, 1150 Sheppard Ave. West, Unit #4, North York, M3K 2B5" data-no-answer="true">
+													<input type="text" data-conv-question="Mob.: 111-111-1111" data-no-answer="true">
+													<input type="text" data-conv-question="Email: nyho@gripbank.com" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Mon - Fri] 11:00am to 06:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sat] 12:00pm to 05:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sun] 12:00pm to 04:00pm" data-no-answer="true">
 												</div>
-												<div data-conv-case="Kitchener">
-													<input type="text" data-conv-question="1. 321 Test Street, Kitchener, ON" data-no-answer="true">
-													<input type="text" data-conv-question="2. 654 Example Avenue, Kitchener, ON" data-no-answer="true">
-													<input type="text" data-conv-question="3. 987 Sample Road, Kitchener, ON" data-no-answer="true">
+												<div data-conv-case="Brampton">
+													<input type="text" data-conv-question="258 Queen St. East Unit #A, Brampton, L6V 1B9" data-no-answer="true">
+													<input type="text" data-conv-question="Mob.: 111-111-1111" data-no-answer="true">
+													<input type="text" data-conv-question="Email: brmp@gripbank.com" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Mon - Fri] 11:00am to 06:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sat] 12:00pm to 05:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sun] 12:00pm to 04:00pm" data-no-answer="true">
 												</div>
-												<div data-conv-case="Cambridge">
-													<input type="text" data-conv-question="1. 111 Test Boulevard, Cambridge, ON" data-no-answer="true">
-													<input type="text" data-conv-question="2. 222 Sample Street, Cambridge, ON" data-no-answer="true">
-													<input type="text" data-conv-question="3. 333 Example Avenue, Cambridge, ON" data-no-answer="true">
+												<div data-conv-case="Etobicoke">
+													<input type="text" data-conv-question="994 Albion Road, Etobicoke, M9V 1A7" data-no-answer="true">
+													<input type="text" data-conv-question="Mob.: 111-111-1111" data-no-answer="true">
+													<input type="text" data-conv-question="Email: etc@gripbank.com" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Mon - Fri] 11:00am to 06:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sat] 12:00pm to 05:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sun] 12:00pm to 04:00pm" data-no-answer="true">
+												</div>
+												<div data-conv-case="Mississauga">
+													<input type="text" data-conv-question="2555 Dixie Rd., Mississauga" data-no-answer="true">
+													<input type="text" data-conv-question="Mob.: 111-111-1111" data-no-answer="true">
+													<input type="text" data-conv-question="Email: mga@gripbank.com" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Mon - Fri] 11:00am to 06:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sat] 12:00pm to 05:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sun] 12:00pm to 04:00pm" data-no-answer="true">
+												</div>
+												<div data-conv-case="Scarborough">
+													<input type="text" data-conv-question="1260 Kennedy Rd., Scarborough, M1P 2L3" data-no-answer="true">
+													<input type="text" data-conv-question="Mob.: 111-111-1111" data-no-answer="true">
+													<input type="text" data-conv-question="Email: scbh@gripbank.com" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Mon - Fri] 11:00am to 06:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sat] 12:00pm to 05:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sun] 12:00pm to 04:00pm" data-no-answer="true">
+												</div>
+												<div data-conv-case="Toronto Downtown">
+													<input type="text" data-conv-question="1012 Gerrard St. East, Toronto, M4M 1Z3" data-no-answer="true">
+													<input type="text" data-conv-question="Mob.: 111-111-1111" data-no-answer="true">
+													<input type="text" data-conv-question="Email: td@gripbank.com" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Mon - Fri] 11:00am to 06:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sat] 12:00pm to 05:00pm" data-no-answer="true">
+													<input type="text" data-conv-question="Working Hours: [Sun] 12:00pm to 04:00pm" data-no-answer="true">
 												</div>
 												<div data-conv-case="no">
-													<select name="thought" data-conv-question="Thank you for contacting me. Did you like the banking service">
+													<select name="thought" data-conv-question="Thank you for contacting me. Did you like the banking service?">
 														<option value="yes">Yes</option>
-														<option value="no">No..</option>
+														<option value="no" data-callback="restore">No</option>
 													</select>
 												</div>
 											</div>
+											<select data-conv-question="Do you want to view the location on Map?" id="">
+												<option value="yes">Yes</option>
+												<option value="no" data-callback="restore">No</option>
+											</select>
+											<input type="url" data-conv-question="https://maps.app.goo.gl/spDfMzA4Vf1k5uwV9?g_st=ic" data-no-answer="true">
 											<select name="callbackTest" data-conv-question="You want to view other ATM addresses?">
 												<option value="yes" data-callback="rollback">Yes</option>
 												<option value="no" data-callback="restore">No</option>
 											</select>
-											<select data-conv-question="Thank you for querying about our ATM locations. Hope you reach to the destination safely" id="">
+											<select data-conv-question="Thank you for querying about our ATM locations. Hope you reach your destination safely." id="">
 												<option value="">Awesome!</option>
 											</select>
 										</form>
