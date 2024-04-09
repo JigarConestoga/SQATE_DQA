@@ -40,7 +40,11 @@
           <li class="nav-item">
             <a class="nav-link" href="transfermoney.php">Transfer Money</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+          <li class="nav-item">
+							<a class="nav-link" href="chatbot.html">Chatbot</a>
+						</li>
+          <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a>
+        </li>
         </ul>
       </div>
     </div>
